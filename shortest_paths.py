@@ -128,7 +128,7 @@ def plot_ratp(ax, g, color=None):
     ax.set_ylim((6856000, 6869000))
     ax.set_aspect(1)
 
-def plot_path(ax, sol):
+def plot_path(ax, g, sol):
 
     for ix, (orig, dest) in enumerate(zip(sol['path'], sol['path'][1:])):
 
@@ -142,27 +142,27 @@ def plot_path(ax, sol):
         if g[orig.id][dest.id]['type'] == 'CONNECTION':
             ax.text(
                 *pos[orig.id],
-                f"{rep['path'][ix]!r}",
+                f"{sol['path'][ix]!r}",
                 fontsize=13,
                 horizontalalignment='right',
                 verticalalignment='top')
             ax.text(
                 *pos[dest.id],
-                f"{rep['path'][ix+1]!r}",
+                f"{sol['path'][ix+1]!r}",
                 fontsize=13,
             )
 
 
     ax.text(
         *pos[sol['path'][0].id],
-        f"{rep['path'][0]!r}",
+        f"{sol['path'][0]!r}",
         fontsize=13,
         horizontalalignment='right',
         verticalalignment='top')
 
     ax.text(
         *pos[sol['path'][-1].id],
-        f"{rep['path'][-1]!r}",
+        f"{sol['path'][-1]!r}",
         fontsize=13,
     )
 
@@ -171,7 +171,7 @@ def animate_path(ax, sol):
 
     ax.text(
         *pos[sol['path'][0].id],
-        f"{rep['path'][0]!r}",
+        f"{sol['path'][0]!r}",
         fontsize=13,
         horizontalalignment='right',
         verticalalignment='top'
@@ -187,7 +187,7 @@ def animate_path(ax, sol):
 
     ax.text(
         *pos[sol['path'][-1].id],
-        f"{rep['path'][-1]!r}",
+        f"{sol['path'][-1]!r}",
         fontsize=13
     )
 
