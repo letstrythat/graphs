@@ -11,7 +11,7 @@ from matplotlib.patches import Polygon
 
 # -- Variables --
 
-archive = ZipFile("data/RATP_GTFS_LINES.zip")
+archive = ZipFile("../data/RATP_GTFS_LINES.zip")
 
 stations: Dict[str, pd.DataFrame] = dict()
 stop_times: Dict[str, pd.DataFrame] = dict()
@@ -60,7 +60,7 @@ def search_station(pattern):
 
 # Contours from OpenStreetMap
 
-with open('data/paris_shapes.json', 'r') as fh:
+with open('../data/paris_shapes.json', 'r') as fh:
     data = json.load(fh)
     paris_shape = data['paris_shape']
     rivers_shape = data['rivers_shape']
