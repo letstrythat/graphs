@@ -8,5 +8,5 @@ pip install networkx
 
 To download the materials:
 ```sh
-git clone https://github.com/xoolive/edu_graphs
+git clone https://github.com/letstrythat/graphs
 ```
